@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Collections;
+using System.Globalization;
 
 namespace Program
 {
@@ -17,12 +19,12 @@ namespace Program
             InitializeComponent();
         }
 
-        char znak;  
-        double liczba; 
-
+        private char znak;  
+        private double liczba;
 
         private void plus_Click(object sender, EventArgs e)
         {
+            rowna.Focus();
             liczba = double.Parse(pole.Text);
             znak = '+';
             pole.Text = "";
@@ -30,6 +32,7 @@ namespace Program
 
         private void minus_Click(object sender, EventArgs e)
         {
+            rowna.Focus();
             liczba = double.Parse(pole.Text);
             znak = '-';
             pole.Text = "";
@@ -37,6 +40,7 @@ namespace Program
 
         private void mnozenie_Click(object sender, EventArgs e)
         {
+            rowna.Focus();
             liczba = double.Parse(pole.Text);
             znak = '*';
             pole.Text = "";
@@ -44,6 +48,7 @@ namespace Program
 
         private void dzielenie_Click(object sender, EventArgs e)
         {
+            rowna.Focus();
             liczba = double.Parse(pole.Text);
             znak = '/';
             pole.Text = "";
@@ -51,56 +56,69 @@ namespace Program
 
         private void kropka_Click(object sender, EventArgs e)
         {
-            pole.AppendText(".");
+            rowna.Focus();
+            string line_temp = Convert.ToString(liczba);
+            double zmienna_double = double.Parse(line_temp, CultureInfo.InvariantCulture.NumberFormat);
+            pole.AppendText(",");
         }
 
         private void b3_Click(object sender, EventArgs e)
         {
+            rowna.Focus();
             pole.AppendText("3");
         }
 
         private void b6_Click(object sender, EventArgs e)
         {
+            rowna.Focus();
             pole.AppendText("6");
         }
 
         private void b9_Click(object sender, EventArgs e)
         {
+            rowna.Focus();
             pole.AppendText("9");
         }
 
         private void b8_Click(object sender, EventArgs e)
         {
+            rowna.Focus();
             pole.AppendText("8");
         }
 
         private void b5_Click(object sender, EventArgs e)
         {
+            rowna.Focus();
             pole.AppendText("5");
         }
 
         private void b2_Click(object sender, EventArgs e)
         {
+            rowna.Focus();
             pole.AppendText("2");
         }
 
         private void b0_Click(object sender, EventArgs e)
         {
+            rowna.Focus();
             pole.AppendText("0");
         }
 
         private void b1_Click(object sender, EventArgs e)
         {
+            rowna.Focus();
             pole.AppendText("1");
         }
 
         private void b4_Click(object sender, EventArgs e)
         {
+            rowna.Focus();
             pole.AppendText("4");
         }
 
         private void b7_Click(object sender, EventArgs e)
         {
+            rowna.Focus();
             pole.AppendText("7");
         }
 
@@ -125,7 +143,7 @@ namespace Program
                     }
                     else
                     {
-                        pole.Text = ((double)liczba / double.Parse(pole.Text)).ToString();
+                        pole.Text = (liczba / double.Parse(pole.Text)).ToString();
                         break;
                     }
                 default:
@@ -135,15 +153,25 @@ namespace Program
 
         private void wyczysc_Click(object sender, EventArgs e)
         {
+            rowna.Focus();
             pole.Text = "";
         }
 
         private void cofnij_Click(object sender, EventArgs e)
         {
+            rowna.Focus();
             int textLength = pole.Text.Length;
             if(textLength > 0)
             {
                 pole.Text = pole.Text.Substring(0, textLength - 1);
+            }
+        }
+
+        private void pole_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsNumber(e.KeyChar) && e.KeyChar != ',')
+            {
+                e.Handled = true;
             }
         }
     }

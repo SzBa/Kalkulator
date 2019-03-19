@@ -54,14 +54,16 @@
             this.pole.Location = new System.Drawing.Point(12, 26);
             this.pole.Name = "pole";
             this.pole.Size = new System.Drawing.Size(178, 20);
-            this.pole.TabIndex = 0;
+            this.pole.TabIndex = 1;
+            this.pole.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.pole_KeyPress);
             // 
             // b5
             // 
             this.b5.Location = new System.Drawing.Point(58, 88);
             this.b5.Name = "b5";
             this.b5.Size = new System.Drawing.Size(40, 30);
-            this.b5.TabIndex = 5;
+            this.b5.TabIndex = 0;
+            this.b5.TabStop = false;
             this.b5.Text = "5";
             this.b5.UseVisualStyleBackColor = true;
             this.b5.Click += new System.EventHandler(this.b5_Click);
@@ -71,7 +73,8 @@
             this.b7.Location = new System.Drawing.Point(12, 52);
             this.b7.Name = "b7";
             this.b7.Size = new System.Drawing.Size(40, 30);
-            this.b7.TabIndex = 6;
+            this.b7.TabIndex = 0;
+            this.b7.TabStop = false;
             this.b7.Text = "7";
             this.b7.UseVisualStyleBackColor = true;
             this.b7.Click += new System.EventHandler(this.b7_Click);
@@ -81,7 +84,8 @@
             this.b8.Location = new System.Drawing.Point(58, 52);
             this.b8.Name = "b8";
             this.b8.Size = new System.Drawing.Size(40, 30);
-            this.b8.TabIndex = 7;
+            this.b8.TabIndex = 0;
+            this.b8.TabStop = false;
             this.b8.Text = "8";
             this.b8.UseVisualStyleBackColor = true;
             this.b8.Click += new System.EventHandler(this.b8_Click);
@@ -91,7 +95,8 @@
             this.b9.Location = new System.Drawing.Point(104, 52);
             this.b9.Name = "b9";
             this.b9.Size = new System.Drawing.Size(40, 30);
-            this.b9.TabIndex = 8;
+            this.b9.TabIndex = 0;
+            this.b9.TabStop = false;
             this.b9.Text = "9";
             this.b9.UseVisualStyleBackColor = true;
             this.b9.Click += new System.EventHandler(this.b9_Click);
@@ -101,7 +106,8 @@
             this.b4.Location = new System.Drawing.Point(12, 88);
             this.b4.Name = "b4";
             this.b4.Size = new System.Drawing.Size(40, 30);
-            this.b4.TabIndex = 9;
+            this.b4.TabIndex = 0;
+            this.b4.TabStop = false;
             this.b4.Text = "4";
             this.b4.UseVisualStyleBackColor = true;
             this.b4.Click += new System.EventHandler(this.b4_Click);
@@ -111,7 +117,8 @@
             this.b6.Location = new System.Drawing.Point(104, 88);
             this.b6.Name = "b6";
             this.b6.Size = new System.Drawing.Size(40, 30);
-            this.b6.TabIndex = 10;
+            this.b6.TabIndex = 0;
+            this.b6.TabStop = false;
             this.b6.Text = "6";
             this.b6.UseVisualStyleBackColor = true;
             this.b6.Click += new System.EventHandler(this.b6_Click);
@@ -121,7 +128,8 @@
             this.b1.Location = new System.Drawing.Point(12, 124);
             this.b1.Name = "b1";
             this.b1.Size = new System.Drawing.Size(40, 30);
-            this.b1.TabIndex = 11;
+            this.b1.TabIndex = 0;
+            this.b1.TabStop = false;
             this.b1.Text = "1";
             this.b1.UseVisualStyleBackColor = true;
             this.b1.Click += new System.EventHandler(this.b1_Click);
@@ -131,7 +139,8 @@
             this.b2.Location = new System.Drawing.Point(58, 124);
             this.b2.Name = "b2";
             this.b2.Size = new System.Drawing.Size(40, 30);
-            this.b2.TabIndex = 12;
+            this.b2.TabIndex = 0;
+            this.b2.TabStop = false;
             this.b2.Text = "2";
             this.b2.UseVisualStyleBackColor = true;
             this.b2.Click += new System.EventHandler(this.b2_Click);
@@ -141,7 +150,8 @@
             this.b3.Location = new System.Drawing.Point(104, 124);
             this.b3.Name = "b3";
             this.b3.Size = new System.Drawing.Size(40, 30);
-            this.b3.TabIndex = 13;
+            this.b3.TabIndex = 0;
+            this.b3.TabStop = false;
             this.b3.Text = "3";
             this.b3.UseVisualStyleBackColor = true;
             this.b3.Click += new System.EventHandler(this.b3_Click);
@@ -151,7 +161,8 @@
             this.plus.Location = new System.Drawing.Point(150, 52);
             this.plus.Name = "plus";
             this.plus.Size = new System.Drawing.Size(40, 30);
-            this.plus.TabIndex = 14;
+            this.plus.TabIndex = 0;
+            this.plus.TabStop = false;
             this.plus.Text = "+";
             this.plus.UseVisualStyleBackColor = true;
             this.plus.Click += new System.EventHandler(this.plus_Click);
@@ -161,7 +172,8 @@
             this.minus.Location = new System.Drawing.Point(150, 88);
             this.minus.Name = "minus";
             this.minus.Size = new System.Drawing.Size(40, 30);
-            this.minus.TabIndex = 15;
+            this.minus.TabIndex = 0;
+            this.minus.TabStop = false;
             this.minus.Text = "-";
             this.minus.UseVisualStyleBackColor = true;
             this.minus.Click += new System.EventHandler(this.minus_Click);
@@ -171,7 +183,8 @@
             this.mnozenie.Location = new System.Drawing.Point(150, 124);
             this.mnozenie.Name = "mnozenie";
             this.mnozenie.Size = new System.Drawing.Size(40, 30);
-            this.mnozenie.TabIndex = 16;
+            this.mnozenie.TabIndex = 0;
+            this.mnozenie.TabStop = false;
             this.mnozenie.Text = "*";
             this.mnozenie.UseVisualStyleBackColor = true;
             this.mnozenie.Click += new System.EventHandler(this.mnozenie_Click);
@@ -181,7 +194,8 @@
             this.dzielenie.Location = new System.Drawing.Point(150, 160);
             this.dzielenie.Name = "dzielenie";
             this.dzielenie.Size = new System.Drawing.Size(40, 30);
-            this.dzielenie.TabIndex = 17;
+            this.dzielenie.TabIndex = 0;
+            this.dzielenie.TabStop = false;
             this.dzielenie.Text = "/";
             this.dzielenie.UseVisualStyleBackColor = true;
             this.dzielenie.Click += new System.EventHandler(this.dzielenie_Click);
@@ -191,7 +205,8 @@
             this.rowna.Location = new System.Drawing.Point(12, 196);
             this.rowna.Name = "rowna";
             this.rowna.Size = new System.Drawing.Size(86, 30);
-            this.rowna.TabIndex = 18;
+            this.rowna.TabIndex = 0;
+            this.rowna.TabStop = false;
             this.rowna.Text = "=";
             this.rowna.UseVisualStyleBackColor = true;
             this.rowna.Click += new System.EventHandler(this.rowna_Click);
@@ -201,7 +216,8 @@
             this.b0.Location = new System.Drawing.Point(58, 160);
             this.b0.Name = "b0";
             this.b0.Size = new System.Drawing.Size(40, 30);
-            this.b0.TabIndex = 19;
+            this.b0.TabIndex = 0;
+            this.b0.TabStop = false;
             this.b0.Text = "0";
             this.b0.UseVisualStyleBackColor = true;
             this.b0.Click += new System.EventHandler(this.b0_Click);
@@ -211,7 +227,8 @@
             this.kropka.Location = new System.Drawing.Point(104, 160);
             this.kropka.Name = "kropka";
             this.kropka.Size = new System.Drawing.Size(40, 30);
-            this.kropka.TabIndex = 20;
+            this.kropka.TabIndex = 0;
+            this.kropka.TabStop = false;
             this.kropka.Text = ",";
             this.kropka.UseVisualStyleBackColor = true;
             this.kropka.Click += new System.EventHandler(this.kropka_Click);
@@ -221,7 +238,8 @@
             this.wyczysc.Location = new System.Drawing.Point(12, 160);
             this.wyczysc.Name = "wyczysc";
             this.wyczysc.Size = new System.Drawing.Size(40, 30);
-            this.wyczysc.TabIndex = 21;
+            this.wyczysc.TabIndex = 0;
+            this.wyczysc.TabStop = false;
             this.wyczysc.Text = "C";
             this.wyczysc.UseVisualStyleBackColor = true;
             this.wyczysc.Click += new System.EventHandler(this.wyczysc_Click);
@@ -231,7 +249,8 @@
             this.cofnij.Location = new System.Drawing.Point(104, 196);
             this.cofnij.Name = "cofnij";
             this.cofnij.Size = new System.Drawing.Size(86, 30);
-            this.cofnij.TabIndex = 22;
+            this.cofnij.TabIndex = 0;
+            this.cofnij.TabStop = false;
             this.cofnij.Text = "BACKSPACE";
             this.cofnij.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.cofnij.UseVisualStyleBackColor = true;
@@ -241,7 +260,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(273, 267);
+            this.ClientSize = new System.Drawing.Size(202, 257);
             this.Controls.Add(this.cofnij);
             this.Controls.Add(this.wyczysc);
             this.Controls.Add(this.kropka);
