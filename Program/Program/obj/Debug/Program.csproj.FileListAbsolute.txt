@@ -1,0 +1,10 @@
+C:\ProgramowanieSem4\Kalkulator\Program\Program\obj\Debug\Program.csprojAssemblyReference.cache
+C:\ProgramowanieSem4\Kalkulator\Program\Program\obj\Debug\Program.Form1.resources
+C:\ProgramowanieSem4\Kalkulator\Program\Program\obj\Debug\Program.Properties.Resources.resources
+C:\ProgramowanieSem4\Kalkulator\Program\Program\obj\Debug\Program.csproj.GenerateResource.cache
+C:\ProgramowanieSem4\Kalkulator\Program\Program\obj\Debug\Program.csproj.CoreCompileInputs.cache
+C:\ProgramowanieSem4\Kalkulator\Program\Program\bin\Debug\Program.exe.config
+C:\ProgramowanieSem4\Kalkulator\Program\Program\bin\Debug\Program.exe
+C:\ProgramowanieSem4\Kalkulator\Program\Program\bin\Debug\Program.pdb
+C:\ProgramowanieSem4\Kalkulator\Program\Program\obj\Debug\Program.exe
+C:\ProgramowanieSem4\Kalkulator\Program\Program\obj\Debug\Program.pdb
