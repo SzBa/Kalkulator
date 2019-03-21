@@ -20,7 +20,7 @@ namespace Program
         }
 
         private char znak;  
-        private double liczba;
+        private double liczba=0.0;
         private bool liczbaIstnieje = false, przecinek = false;
 
         private void plus_Click(object sender, EventArgs e)
@@ -43,6 +43,10 @@ namespace Program
                 znak = '-';
                 pole.Text = "";
                 blokowanieZnakow();
+            }
+            else
+            {
+                pole.AppendText("-");
             }
           
         }
@@ -190,6 +194,7 @@ namespace Program
         {
             pole.Text = "";
             guzikiOn();
+            liczba = 0.0;
         }
 
         private void cofnij_Click(object sender, EventArgs e)
