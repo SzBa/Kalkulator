@@ -156,7 +156,7 @@ namespace Program
 
         private void rowna_Click(object sender, EventArgs e)
         {
-            if(liczbaIstnieje == true)
+            if(liczbaIstnieje == true && pole.Text != "")
             switch (znak)
             {
                 case '+':
@@ -192,9 +192,9 @@ namespace Program
 
         private void wyczysc_Click(object sender, EventArgs e)
         {
+            liczba = 0.0;
             pole.Text = "";
             guzikiOn();
-            liczba = 0.0;
         }
 
         private void cofnij_Click(object sender, EventArgs e)
