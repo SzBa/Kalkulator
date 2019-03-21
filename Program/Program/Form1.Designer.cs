@@ -55,7 +55,6 @@
             this.pole.Name = "pole";
             this.pole.Size = new System.Drawing.Size(178, 20);
             this.pole.TabIndex = 1;
-            this.pole.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.pole_KeyPress);
             // 
             // b5
             // 

@@ -21,7 +21,7 @@ namespace Program
 
         private char znak;  
         private double liczba;
-        private bool liczbaIstnieje = false, koniec = false;
+        private bool liczbaIstnieje = false, przecinek = false;
 
         private void plus_Click(object sender, EventArgs e)
         {
@@ -30,6 +30,7 @@ namespace Program
                 liczba = double.Parse(pole.Text);
                 znak = '+';
                 pole.Text = "";
+                blokowanieZnakow();
             }
           
         }
@@ -41,6 +42,7 @@ namespace Program
                 liczba = double.Parse(pole.Text);
                 znak = '-';
                 pole.Text = "";
+                blokowanieZnakow();
             }
           
         }
@@ -52,6 +54,7 @@ namespace Program
                 liczba = double.Parse(pole.Text);
                 znak = '*';
                 pole.Text = "";
+                blokowanieZnakow();
             }
           
         }
@@ -63,15 +66,28 @@ namespace Program
                 liczba = double.Parse(pole.Text);
                 znak = '/';
                 pole.Text = "";
+                blokowanieZnakow();
             }
           
         }
 
         private void kropka_Click(object sender, EventArgs e)
         {
-            string line_temp = Convert.ToString(liczba);
-            double zmienna_double = double.Parse(line_temp, CultureInfo.InvariantCulture.NumberFormat);
-            pole.AppendText(",");
+            if(przecinek == false)
+            {
+                string line_temp = Convert.ToString(liczba);
+                double zmienna_double = double.Parse(line_temp, CultureInfo.InvariantCulture.NumberFormat);
+                if(pole.Text == "")
+                {
+                    pole.AppendText("0,");
+                }
+                else if (pole.Text != "")
+                {
+                    pole.AppendText(",");
+                }
+                przecinek = true;
+            }
+
         }
 
         private void b3_Click(object sender, EventArgs e)
@@ -136,55 +152,48 @@ namespace Program
 
         private void rowna_Click(object sender, EventArgs e)
         {
-            if(liczbaIstnieje = true && koniec == false)
+            if(liczbaIstnieje == true)
             switch (znak)
             {
                 case '+':
                     pole.Text = (liczba + double.Parse(pole.Text)).ToString();
                     liczbaIstnieje = false;
-                    koniec = true;
+                    guziki();
                     break;
                 case '-':
                     pole.Text = (liczba - double.Parse(pole.Text)).ToString();
                     liczbaIstnieje = false;
-                    koniec = true;
+                    guziki();
                     break;
                 case '*':
                     pole.Text = (liczba * double.Parse(pole.Text)).ToString();
                     liczbaIstnieje = false;
-                    koniec = true;
+                    guziki();
                     break;
                 case '/':
                     if (pole.TextLength==1 && pole.Text[0].Equals('0'))
                     {
                         pole.Text = "Nie można dzielić przez zero!";
-                        liczbaIstnieje = false;
-                        koniec = true;
-                        break;
                     }
                     else
                     {
                         pole.Text = (liczba / double.Parse(pole.Text)).ToString();
-                        liczbaIstnieje = false;
-                        koniec = true;
-                        break;
                     }
-                default:
                     liczbaIstnieje = false;
+                    guziki();
                     break;
-            }
+                }
             
         }
 
         private void wyczysc_Click(object sender, EventArgs e)
         {
-            pole.Focus();
             pole.Text = "";
+            guzikiOn();
         }
 
         private void cofnij_Click(object sender, EventArgs e)
         {
-            pole.Focus();
             int textLength = pole.Text.Length;
             if(textLength > 0)
             {
@@ -192,70 +201,59 @@ namespace Program
             }
         }
 
-        private void pole_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!Char.IsNumber(e.KeyChar) && e.KeyChar != ',')
-            {
-                e.Handled = true;
-            }
-        }
-
-        //private void Form1_KeyPress(object sender, KeyPressEventArgs e)
+        //private void pole_KeyPress(object sender, KeyPressEventArgs e)
         //{
-        //    switch (e.KeyChar)
+        //    if (!Char.IsNumber(e.KeyChar) && e.KeyChar != ',')
         //    {
-        //        //case (char)48:
-        //        //    liczba(button11, e);
-        //        //    break;
-        //        //case (char)49:
-        //        //    liczba(button9, e);
-        //        //    break;
-        //        //case (char)50:
-        //        //    liczba(button8, e);
-        //        //    break;
-        //        //case (char)51:
-        //        //    liczba(button7, e);
-        //        //    break;
-        //        //case (char)52:
-        //        //    liczba(button6, e);
-        //        //    break;
-        //        //case (char)53:
-        //        //    liczba(button5, e);
-        //        //    break;
-        //        //case (char)54:
-        //        //    liczba(button4, e);
-        //        //    break;
-        //        //case (char)55:
-        //        //    liczba(button1, e);
-        //        //    break;
-        //        //case (char)56:
-        //        //    liczba(button2, e);
-        //        //    break;
-        //        //case (char)57:
-        //        //    liczba(button3, e);
-        //        //    break;
-        //        case (char)44:
-        //            kropka_Click(liczba, e);
-        //            break;
-        //        case (char)61:
-        //            rowna_Click(liczba, e);
-        //            break;
-        //        case (char)45:
-        //            minus_Click(minus, e);
-        //            break;
-        //        case (char)47:
-        //            dzielenie_Click(dzielenie, e);
-        //            break;
-        //        case (char)42:
-        //            mnozenie_Click(mnozenie, e);
-        //            break;
-        //        case (char)13:
-        //            rowna_Click(rowna, e);
-        //            break;
-        //        case (char)8:
-        //            cofnij_Click(cofnij, e);
-        //            break;
+        //        e.Handled = true;
         //    }
         //}
+
+        private void blokowanieZnakow()
+        {
+            plus.Enabled = false;
+            minus.Enabled = false;
+            mnozenie.Enabled = false;
+            dzielenie.Enabled = false;
+            przecinek = false;
+        }
+        
+        private void guziki()
+        {
+            b1.Enabled = false;
+            b2.Enabled = false;
+            b3.Enabled = false;
+            b4.Enabled = false;
+            b5.Enabled = false;
+            b6.Enabled = false;
+            b7.Enabled = false;
+            b8.Enabled = false;
+            b9.Enabled = false;
+            b0.Enabled = false;
+            blokowanieZnakow();
+            kropka.Enabled = false;
+            cofnij.Enabled = false;
+            rowna.Enabled = false;
+        }
+        private void guzikiOn()
+        {
+            b1.Enabled = true;
+            b2.Enabled = true;
+            b3.Enabled = true;
+            b4.Enabled = true;
+            b5.Enabled = true;
+            b6.Enabled = true;
+            b7.Enabled = true;
+            b8.Enabled = true;
+            b9.Enabled = true;
+            b0.Enabled = true;
+            plus.Enabled = true;
+            minus.Enabled = true;
+            mnozenie.Enabled = true;
+            dzielenie.Enabled = true;
+            kropka.Enabled = true;
+            cofnij.Enabled = true;
+            rowna.Enabled = true;
+        }
     }
 }
