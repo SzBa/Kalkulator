@@ -37,7 +37,7 @@ namespace Program
 
         private void minus_Click(object sender, EventArgs e)
         {
-            if(liczbaIstnieje == true)
+            if (liczbaIstnieje == true)
             {
                 liczba = double.Parse(pole.Text);
                 znak = '-';
@@ -46,7 +46,11 @@ namespace Program
             }
             else
             {
-                pole.AppendText("-");
+                if (pole.Text == "")
+                {
+                    pole.AppendText("-");
+                }
+                
             }
           
         }
@@ -82,6 +86,10 @@ namespace Program
                 string line_temp = Convert.ToString(liczba);
                 double zmienna_double = double.Parse(line_temp, CultureInfo.InvariantCulture.NumberFormat);
                 if(pole.Text == "")
+                {
+                    pole.AppendText("0,");
+                }
+                else if(pole.Text == "-")
                 {
                     pole.AppendText("0,");
                 }
@@ -206,14 +214,6 @@ namespace Program
             }
         }
 
-        //private void pole_KeyPress(object sender, KeyPressEventArgs e)
-        //{
-        //    if (!Char.IsNumber(e.KeyChar) && e.KeyChar != ',')
-        //    {
-        //        e.Handled = true;
-        //    }
-        //}
-
         private void blokowanieZnakow()
         {
             plus.Enabled = false;
@@ -221,6 +221,7 @@ namespace Program
             mnozenie.Enabled = false;
             dzielenie.Enabled = false;
             przecinek = false;
+            wyczysc.Enabled = false;
         }
         
         private void guziki()
@@ -239,6 +240,7 @@ namespace Program
             kropka.Enabled = false;
             cofnij.Enabled = false;
             rowna.Enabled = false;
+            wyczysc.Enabled = true;
         }
         private void guzikiOn()
         {
