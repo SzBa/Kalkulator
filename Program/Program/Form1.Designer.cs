@@ -53,6 +53,7 @@
             // 
             this.pole.Location = new System.Drawing.Point(12, 26);
             this.pole.Name = "pole";
+            this.pole.ReadOnly = true;
             this.pole.Size = new System.Drawing.Size(178, 20);
             this.pole.TabIndex = 1;
             // 
@@ -285,7 +286,6 @@
             this.MinimizeBox = false;
             this.Name = "Form1";
             this.Text = "Kalkulator by Babula";
-            //this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Form1_KeyPress);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -183,14 +183,22 @@ namespace Program
                     guziki();
                     break;
                 case '/':
-                    if (pole.TextLength==1 && pole.Text[0].Equals('0'))
-                    {
-                        pole.Text = "Nie można dzielić przez zero!";
-                    }
-                    else
-                    {
-                        pole.Text = (liczba / double.Parse(pole.Text)).ToString();
-                    }
+                        if (pole.Text.Length == 1 && pole.Text == "0")
+                        {
+                            pole.Text = "Nie można dzielić przez zero!";
+                        }
+                        else if (pole.Text.Length == 2 && pole.Text == "0,")
+                        {
+                            pole.Text = "Nie można dzielić przez zero!";
+                        }
+                        else if (pole.Text.Length == 3 && pole.Text == "0,0")
+                        {
+                            pole.Text = "Nie można dzielić przez zero!";
+                        }
+                        else
+                        {
+                            pole.Text = (liczba / double.Parse(pole.Text)).ToString();
+                        }
                     liczbaIstnieje = false;
                     guziki();
                     break;
